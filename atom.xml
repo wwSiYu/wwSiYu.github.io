@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wwsiyu.github.io/"/>
-  <updated>2020-04-30T15:54:40.693Z</updated>
+  <updated>2020-04-30T16:44:10.103Z</updated>
   <id>https://wwsiyu.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wwsiyu.github.io/2020/04/30/di-er-pian/"/>
     <id>https://wwsiyu.github.io/2020/04/30/di-er-pian/</id>
     <published>2020-04-30T15:53:17.000Z</published>
-    <updated>2020-04-30T15:54:40.693Z</updated>
+    <updated>2020-04-30T16:44:10.103Z</updated>
     
     <summary type="html">
     
@@ -39,6 +39,10 @@
     
     </summary>
     
+      <category term="DEMO" scheme="https://wwsiyu.github.io/categories/DEMO/"/>
+    
+    
+      <category term="没啥用" scheme="https://wwsiyu.github.io/tags/%E6%B2%A1%E5%95%A5%E7%94%A8/"/>
     
   </entry>
   
@@ -47,7 +51,7 @@
     <link href="https://wwsiyu.github.io/2020/04/30/di-yi-pian-bo-ke/"/>
     <id>https://wwsiyu.github.io/2020/04/30/di-yi-pian-bo-ke/</id>
     <published>2020-04-30T14:35:37.000Z</published>
-    <updated>2020-04-30T15:46:07.281Z</updated>
+    <updated>2020-04-30T16:51:11.051Z</updated>
     
     <summary type="html">
     
@@ -63,6 +67,10 @@
     
     </summary>
     
+      <category term="DEMO" scheme="https://wwsiyu.github.io/categories/DEMO/"/>
+    
+    
+      <category term="没啥用" scheme="https://wwsiyu.github.io/tags/%E6%B2%A1%E5%95%A5%E7%94%A8/"/>
     
   </entry>
   
