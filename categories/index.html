@@ -563,11 +563,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 
                 
                 
-                <a href="/categories/DEMO/" title="DEMO: 2">
+                <a href="/categories/DEMO/" title="DEMO: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">DEMO
-                        <span class="tag-length">2</span>
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/DEMO-2/" title="DEMO 2: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">DEMO 2
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -613,7 +622,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"DEMO","max":4}],
+            indicator: [{"name":"DEMO","max":2},{"name":"DEMO 2","max":2}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -624,7 +633,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [2],
+                    value : [1,1],
                     name : '文章分类数量'
                 }
             ]
