@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wwsiyu.github.io/"/>
-  <updated>2020-05-01T13:33:19.865Z</updated>
+  <updated>2020-05-01T15:47:41.252Z</updated>
   <id>https://wwsiyu.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SpringBoot启动原理</title>
+    <link href="https://wwsiyu.github.io/2020/05/01/springboot-qi-dong-yuan-li-jie-xi/"/>
+    <id>https://wwsiyu.github.io/2020/05/01/springboot-qi-dong-yuan-li-jie-xi/</id>
+    <published>2020-05-01T13:38:49.000Z</published>
+    <updated>2020-05-01T15:47:41.252Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;我们开发任何一个Spring Boot项目，都会用到如下的启动类&lt;/strong&gt;  &lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://wwsiyu.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="原理" scheme="https://wwsiyu.github.io/tags/%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="SpringBoot" scheme="https://wwsiyu.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Tomcat在SpringBoot中是如何启动的</title>
     <link href="https://wwsiyu.github.io/2020/05/01/tomcat-zai-springboot-zhong-shi-ru-he-qi-dong-de/"/>
     <id>https://wwsiyu.github.io/2020/05/01/tomcat-zai-springboot-zhong-shi-ru-he-qi-dong-de/</id>
     <published>2020-05-01T12:58:45.000Z</published>
-    <updated>2020-05-01T13:33:19.865Z</updated>
+    <updated>2020-05-01T13:54:14.799Z</updated>
     
     <summary type="html">
     
@@ -35,14 +64,16 @@
     
     </summary>
     
-      <category term="Tomcat" scheme="https://wwsiyu.github.io/categories/Tomcat/"/>
+      <category term="SpringBoot" scheme="https://wwsiyu.github.io/categories/SpringBoot/"/>
     
-      <category term="SpringBoot" scheme="https://wwsiyu.github.io/categories/Tomcat/SpringBoot/"/>
+      <category term="Tomcat" scheme="https://wwsiyu.github.io/categories/SpringBoot/Tomcat/"/>
     
     
-      <category term="Tomcat" scheme="https://wwsiyu.github.io/tags/Tomcat/"/>
+      <category term="原理" scheme="https://wwsiyu.github.io/tags/%E5%8E%9F%E7%90%86/"/>
     
       <category term="SpringBoot" scheme="https://wwsiyu.github.io/tags/SpringBoot/"/>
+    
+      <category term="Tomcat" scheme="https://wwsiyu.github.io/tags/Tomcat/"/>
     
   </entry>
   
@@ -51,7 +82,7 @@
     <link href="https://wwsiyu.github.io/2020/05/01/11/"/>
     <id>https://wwsiyu.github.io/2020/05/01/11/</id>
     <published>2020-05-01T11:43:51.000Z</published>
-    <updated>2020-05-01T12:51:18.410Z</updated>
+    <updated>2020-05-01T13:39:46.966Z</updated>
     
     <summary type="html">
     
@@ -68,9 +99,9 @@
       <category term="SpringMVC" scheme="https://wwsiyu.github.io/categories/SpringMVC/"/>
     
     
-      <category term="SpringMVC" scheme="https://wwsiyu.github.io/tags/SpringMVC/"/>
+      <category term="原理" scheme="https://wwsiyu.github.io/tags/%E5%8E%9F%E7%90%86/"/>
     
-      <category term="工作原理" scheme="https://wwsiyu.github.io/tags/%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
+      <category term="SpringMVC" scheme="https://wwsiyu.github.io/tags/SpringMVC/"/>
     
   </entry>
   
@@ -79,7 +110,7 @@
     <link href="https://wwsiyu.github.io/2020/04/30/di-er-pian/"/>
     <id>https://wwsiyu.github.io/2020/04/30/di-er-pian/</id>
     <published>2020-04-30T15:53:17.000Z</published>
-    <updated>2020-05-01T12:41:05.697Z</updated>
+    <updated>2020-05-01T13:43:26.801Z</updated>
     
     <summary type="html">
     
