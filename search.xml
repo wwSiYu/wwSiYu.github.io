@@ -4,23 +4,23 @@
   
     
     <entry>
-      <title>第二篇</title>
+      <title>SQL语句</title>
       <link href="/2020/04/30/di-er-pian/"/>
       <url>/2020/04/30/di-er-pian/</url>
       
-        <content type="html"><![CDATA[<p>papapa</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h1><span id="sql语句大全s">SQL语句大全s</span></h1><h2><span id="一-基础">一、基础</span></h2><ol><li>说明：创建数据库<br><font color="gree">CREATE DATABASE database-name</font></li><li>说明：删除数据库<br><font color="gree">drop database dbname</font></li><li>说明：备份sql server  <ul><li>创建 备份数据的 device<br><font color="gree"> USE master<br>EXEC sp_addumpdevice ‘disk’, ‘testBack’, ‘c:\mssql7backup\MyNwind_1.dat’ </font> </li><li>开始备份<br><font color="gree">BACKUP DATABASE pubs TO testBack </font><ol start="4"><li>说明：创建新表</li></ol></li><li>根据已有的表创建新表<br><font color="gree">A：create table tab_new like tab_old </font>(使用旧表创建新表)<br><font color="gree">B：create table tab_new as select col1,col2… from tab_old definition only</font></li></ul></li><li>说明：删除新表<br><font color="gree">drop table tabname  </font></li><li>说明：增加一个列<br><font color="gree">Alter table tabname add column col type</font><br><font color="red">注:</font>列增加后将不能删除。DB2中列加上后数据类型也不能改变，唯一能改变的是增加varchar类型的长度  </li><li>说明：添加主键<br><font color="gree">Alter table tabname add primary key(col)</font><br>说明：删除主键<br><font color="gree">Alter table tabname drop primary key(col)</font>  </li><li>说明：创建索引<br><font color="gree">create [unique] index idxname on tabname(col….) </font><br>删除索引<br><font color="gree">drop index idxname</font><br><font color="red">  注: </font>索引是不可更改的，想更改必须删除重新建</li><li>说明：创建视图<br><font color="gree">create view viewname as select statement</font><br>删除视图<br><font color="gree">drop view viewname</font></li><li>说明：几个简单的基本的sql语句<br>选择：<font color="gree">select * from table1 where 范围</font><br>删除：<font color="gree">delete from table1 where 范围</font><br>更新：<font color="gree">update table1 set field1=value1 where 范围</font><br>查找：<font color="gree">select * from table1 where field1 like ’%value1%’</font>—like的语法很精妙，查资料!<br>排序：<font color="gree">select * from table1 order by field1,field2 [desc]</font><br>总数：<font color="gree">select count as totalcount from </font><br>求和：<font color="gree">select sum(field1) as sumvalue from table1</font><br>平均：<font color="gree">select avg(field1) as avgvalue from table1</font><br>最大：<font color="gree">select max(field1) as maxvalue from table1</font><br>最小：<font color="gree">select min(field1) as minvalue from table1</font></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
           
-          <category> DEMO 2 </category>
+          <category> SQL </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 没啥用2 </tag>
+            <tag> SQL语句 </tag>
             
         </tags>
       

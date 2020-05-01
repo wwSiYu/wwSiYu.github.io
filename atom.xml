@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wwsiyu.github.io/"/>
-  <updated>2020-05-01T06:29:53.907Z</updated>
+  <updated>2020-05-01T07:51:39.881Z</updated>
   <id>https://wwsiyu.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>第二篇</title>
+    <title>SQL语句</title>
     <link href="https://wwsiyu.github.io/2020/04/30/di-er-pian/"/>
     <id>https://wwsiyu.github.io/2020/04/30/di-er-pian/</id>
     <published>2020-04-30T15:53:17.000Z</published>
-    <updated>2020-05-01T06:29:53.907Z</updated>
+    <updated>2020-05-01T07:51:39.881Z</updated>
     
     <summary type="html">
     
@@ -29,20 +29,17 @@
       
         
         
-          &lt;p&gt;papapa&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) {
+          &lt;h1&gt;&lt;span id=&quot;sql语句大全s&quot;&gt;SQL语句大全s&lt;/span&gt;&lt;/h1&gt;&lt;h2&gt;&lt;span id=&quot;一-基础&quot;&gt;一、基础&lt;/span&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;说明：创建数据库&lt;br&gt;&lt;font color=&quot;gree&quot;&gt;CREATE DATABASE
         
       
     
     </summary>
     
-      <category term="DEMO 2" scheme="https://wwsiyu.github.io/categories/DEMO-2/"/>
+      <category term="SQL" scheme="https://wwsiyu.github.io/categories/SQL/"/>
     
     
-      <category term="没啥用2" scheme="https://wwsiyu.github.io/tags/%E6%B2%A1%E5%95%A5%E7%94%A82/"/>
+      <category term="SQL语句" scheme="https://wwsiyu.github.io/tags/SQL%E8%AF%AD%E5%8F%A5/"/>
     
   </entry>
   

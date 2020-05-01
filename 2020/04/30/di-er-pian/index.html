@@ -6,14 +6,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第二篇, 思宇">
+    <meta name="keywords" content="SQL语句, 思宇">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="papapa
-
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) {">
+    <meta name="description" content="SQL语句大全s一、基础
+说明：创建数据库CREATE DATABASE database-name
+说明：删除数据库drop database dbname
+说明：备份sql server  
+创建 备份数据的 device USE ma">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第二篇 | 思宇</title>
+    <title>SQL语句 | 思宇</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -523,13 +523,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第二篇
+                        SQL语句
                     </div>
                 </div>
             </div>
@@ -539,10 +539,99 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- shw2018 洪卫  modify 2019.08.15-->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- shw2018 洪卫  modify 2019.08.15-->
 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -552,8 +641,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/没啥用2/" target="_blank">
-                                <span class="chip bg-color">没啥用2</span>
+                            <a href="/tags/SQL语句/" target="_blank">
+                                <span class="chip bg-color">SQL语句</span>
                             </a>
                         
                     </div>
@@ -564,8 +653,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/DEMO-2/" class="post-category" target="_blank">
-                                DEMO 2
+                            <a href="/categories/SQL/" class="post-category" target="_blank">
+                                SQL
                             </a>
                         
                     </div>
@@ -590,7 +679,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        53
+                        412
                     </div>
                     
 
@@ -614,7 +703,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>papapa</p>
+                <h1><span id="sql语句大全s">SQL语句大全s</span></h1><h2><span id="一-基础">一、基础</span></h2><ol>
+<li>说明：创建数据库<br><font color="gree">CREATE DATABASE database-name</font></li>
+<li>说明：删除数据库<br><font color="gree">drop database dbname</font></li>
+<li>说明：备份sql server  <ul>
+<li>创建 备份数据的 device<br><font color="gree"> USE master<br>EXEC sp_addumpdevice ‘disk’, ‘testBack’, ‘c:\mssql7backup\MyNwind_1.dat’ </font> </li>
+<li>开始备份<br><font color="gree">BACKUP DATABASE pubs TO testBack </font><ol start="4">
+<li>说明：创建新表</li>
+</ol>
+</li>
+<li>根据已有的表创建新表<br><font color="gree">A：create table tab_new like tab_old </font>(使用旧表创建新表)<br><font color="gree">B：create table tab_new as select col1,col2… from tab_old definition only</font></li>
+</ul>
+</li>
+<li>说明：删除新表<br><font color="gree">drop table tabname  </font></li>
+<li>说明：增加一个列<br><font color="gree">Alter table tabname add column col type</font><br><font color="red">注:</font>列增加后将不能删除。DB2中列加上后数据类型也不能改变，唯一能改变的是增加varchar类型的长度  </li>
+<li>说明：添加主键<br><font color="gree">Alter table tabname add primary key(col)</font><br>说明：删除主键<br><font color="gree">Alter table tabname drop primary key(col)</font>  </li>
+<li>说明：创建索引<br><font color="gree">create [unique] index idxname on tabname(col….) </font><br>删除索引<br><font color="gree">drop index idxname</font><br><font color="red">  注: </font>索引是不可更改的，想更改必须删除重新建</li>
+<li>说明：创建视图<br><font color="gree">create view viewname as select statement</font><br>删除视图<br><font color="gree">drop view viewname</font></li>
+<li>说明：几个简单的基本的sql语句<br>选择：<font color="gree">select * from table1 where 范围</font><br>删除：<font color="gree">delete from table1 where 范围</font><br>更新：<font color="gree">update table1 set field1=value1 where 范围</font><br>查找：<font color="gree">select * from table1 where field1 like ’%value1%’</font>—like的语法很精妙，查资料!<br>排序：<font color="gree">select * from table1 order by field1,field2 [desc]</font><br>总数：<font color="gree">select count as totalcount from </font><br>求和：<font color="gree">select sum(field1) as sumvalue from table1</font><br>平均：<font color="gree">select avg(field1) as avgvalue from table1</font><br>最大：<font color="gree">select max(field1) as maxvalue from table1</font><br>最小：<font color="gree">select min(field1) as minvalue from table1</font></li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -783,7 +890,7 @@
                     </span>
                     <a href="https://wwsiyu.github.io" class="b-link-green">思宇</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/04/30/di-er-pian/" class="b-link-green">第二篇</a>
+                    <a href="/2020/04/30/di-er-pian/" class="b-link-green">SQL语句</a>
                 </p>
             </div>
 
@@ -836,15 +943,15 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="第二篇">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="SQL语句">
                         
-                        <span class="card-title">第二篇</span>
+                        <span class="card-title">SQL语句</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            biubiu
+                            SQL语句
                         
                     </div>
                     <div class="publish-info">
@@ -855,8 +962,8 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/DEMO-2/" class="post-category" target="_blank">
-                                    DEMO 2
+                            <a href="/categories/SQL/" class="post-category" target="_blank">
+                                    SQL
                                 </a>
                             
                             
@@ -867,8 +974,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/没啥用2/" target="_blank">
-                        <span class="chip bg-color">没啥用2</span>
+                    <a href="/tags/SQL语句/" target="_blank">
+                        <span class="chip bg-color">SQL语句</span>
                     </a>
                     
                 </div>
@@ -968,6 +1075,99 @@
 </script>
 
 
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
     
 
 </main>
@@ -1216,5 +1416,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
