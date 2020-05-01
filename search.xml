@@ -29,11 +29,11 @@
     
     
     <entry>
-      <title>第一篇</title>
+      <title>测试</title>
       <link href="/2020/04/30/di-yi-pian-bo-ke/"/>
       <url>/2020/04/30/di-yi-pian-bo-ke/</url>
       
-        <content type="html"><![CDATA[<p>HelloWorld</p><hr><p>biubiubiu</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/01/JmhB5PHgnOj1E9G.jpg" alt></p><hr><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
@@ -45,7 +45,7 @@
       
         <tags>
             
-            <tag> 没啥用 </tag>
+            <tag> 测试 </tag>
             
         </tags>
       
