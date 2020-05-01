@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wwsiyu.github.io/"/>
-  <updated>2020-05-01T15:47:41.252Z</updated>
+  <updated>2020-05-01T16:20:00.194Z</updated>
   <id>https://wwsiyu.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JVM堆，栈，方法区</title>
+    <link href="https://wwsiyu.github.io/2020/05/02/jvm-dui-zhan-fang-fa-qu/"/>
+    <id>https://wwsiyu.github.io/2020/05/02/jvm-dui-zhan-fang-fa-qu/</id>
+    <published>2020-05-01T16:03:57.000Z</published>
+    <updated>2020-05-01T16:20:00.194Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;&lt;span id=&quot;一-jvm运行时数据区有哪些&quot;&gt;一、jvm运行时数据区有哪些&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;我们先来看一张图&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="JVM" scheme="https://wwsiyu.github.io/categories/JVM/"/>
+    
+    
+      <category term="JVM" scheme="https://wwsiyu.github.io/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SpringBoot启动原理</title>
     <link href="https://wwsiyu.github.io/2020/05/01/springboot-qi-dong-yuan-li-jie-xi/"/>
     <id>https://wwsiyu.github.io/2020/05/01/springboot-qi-dong-yuan-li-jie-xi/</id>
     <published>2020-05-01T13:38:49.000Z</published>
-    <updated>2020-05-01T15:47:41.252Z</updated>
+    <updated>2020-05-01T16:23:57.160Z</updated>
     
     <summary type="html">
     
@@ -71,9 +97,9 @@
     
       <category term="原理" scheme="https://wwsiyu.github.io/tags/%E5%8E%9F%E7%90%86/"/>
     
-      <category term="SpringBoot" scheme="https://wwsiyu.github.io/tags/SpringBoot/"/>
-    
       <category term="Tomcat" scheme="https://wwsiyu.github.io/tags/Tomcat/"/>
+    
+      <category term="SpringBoot" scheme="https://wwsiyu.github.io/tags/SpringBoot/"/>
     
   </entry>
   
@@ -99,9 +125,9 @@
       <category term="SpringMVC" scheme="https://wwsiyu.github.io/categories/SpringMVC/"/>
     
     
-      <category term="原理" scheme="https://wwsiyu.github.io/tags/%E5%8E%9F%E7%90%86/"/>
-    
       <category term="SpringMVC" scheme="https://wwsiyu.github.io/tags/SpringMVC/"/>
+    
+      <category term="原理" scheme="https://wwsiyu.github.io/tags/%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   

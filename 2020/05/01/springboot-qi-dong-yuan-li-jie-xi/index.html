@@ -955,11 +955,11 @@ public class Application {
 <p>该方法在springboot启动流程——bean实例化前被执行，返回要实例化的类信息列表。我们知道，如果获取到类信息，spring自然可以通过类加载器将类加载到jvm中，现在我们已经通过spring-boot的starter依赖方式依赖了我们需要的组件，那么这些组建的类信息在select方法中也是可以被获取到的，不要急我们继续向下分析。  </p>
 <p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/01/GkDQczVhIUeXo17.jpg" alt>  </p>
 <p>该方法中的getCandidateConfigurations方法，通过方法注释了解到，其返回一个自动配置类的类名列表，方法调用了loadFactoryNames方法，查看该方法  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="SpringBoot%E5%90%AF%E5%8A%A8%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90%5Cimages%5C%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%8721.jpg" alt>  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/zHGMfDxPc7FvtRe.jpg" alt> </p>
 <p>在上面的代码可以看到自动配置器会根据传入的factoryClass.getName()到项目系统路径下所有的spring.factories文件中找到相应的key，从而加载里面的类。我们就选取这个mybatis-spring-boot-autoconfigure下的spring.factories文件   </p>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="SpringBoot%E5%90%AF%E5%8A%A8%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90%5Cimages%5C%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%8722.jpg" alt>  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/F1dyujIoW3ReQpG.jpg" alt>  </p>
 <p>进入org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration中，主要看一下类头：  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="SpringBoot%E5%90%AF%E5%8A%A8%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90%5Cimages%5C%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%8723.jpg" alt> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/Crn3blXDiEjFIsm.jpg" alt> </p>
 <p>发现Spring的@Configuration，俨然是一个通过注解标注的springBean，继续向下看  </p>
 <ul>
 <li>@ConditionalOnClass({ SqlSessionFactory.class, SqlSessionFactoryBean.class})：当存在SqlSessionFactory.class, SqlSessionFactoryBean.class这两个类时才解析MybatisAutoConfiguration配置类，否则不解析这一个配置类，make sence，我们需要mybatis为我们返回会话对象，就必须有会话工厂相关类。  </li>
@@ -969,9 +969,9 @@ public class Application {
 <p>以上配置可以保证sqlSessionFactory、sqlSessionTemplate、dataSource等mybatis所需的组件均可被自动配置，@Configuration注解已经提供了Spring的上下文环境，所以以上组件的配置方式与Spring启动时通过mybatis.xml文件进行配置起到一个效果。  </p>
 <p>通过分析我们可以发现，只要一个基于SpringBoot项目的类路径下存在SqlSessionFactory.class, SqlSessionFactoryBean.class，并且容器中已经注册了dataSourceBean，就可以触发自动化配置，意思说我们只要在maven的项目中加入了mybatis所需要的若干依赖，就可以触发自动配置，但引入mybatis原生依赖的话，每集成一个功能都要去修改其自动化配置类，那就得不到开箱即用的效果了。  </p>
 <p>所以Spring-boot为我们提供了统一的starter可以直接配置好相关的类，触发自动配置所需的依赖(mybatis)如下：  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="SpringBoot%E5%90%AF%E5%8A%A8%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90%5Cimages%5C%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%8724.jpg" alt>  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/hyzJaMiA2xtuZHO.jpg" alt>  </p>
 <p>这里是截取的mybatis-spring-boot-starter的源码中pom.xml文件中所有依赖：  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="SpringBoot%E5%90%AF%E5%8A%A8%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90%5Cimages%5C%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%8725.png" alt>  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/KhdSPZUxLRceBAM.png" alt> </p>
 <h2><span id="因为maven依赖的传递性我们只要依赖starter就可以依赖到所有需要自动配置的类实现开箱即用的功能-也体现出springboot简化了spring框架带来的大量xml配置以及复杂的依赖管理让开发人员可以更加关注业务逻辑的开发">因为maven依赖的传递性，我们只要依赖starter就可以依赖到所有需要自动配置的类，实现开箱即用的功能。也体现出Springboot简化了Spring框架带来的大量XML配置以及复杂的依赖管理，让开发人员可以更加关注业务逻辑的开发。</span></h2><h1><span id="完结">完结…</span></h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1184,18 +1184,17 @@ public class Application {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/01/springboot-qi-dong-yuan-li-jie-xi/">
+                <a href="/2020/05/02/jvm-dui-zhan-fang-fa-qu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="SpringBoot启动原理">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="JVM堆，栈，方法区">
                         
-                        <span class="card-title">SpringBoot启动原理</span>
+                        <span class="card-title">JVM堆，栈，方法区</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1205,31 +1204,26 @@ public class Application {
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-02
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SpringBoot/" class="post-category" target="_blank">
-                                    SpringBoot
+                            <a href="/categories/JVM/" class="post-category" target="_blank">
+                                    JVM
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/原理/" target="_blank">
-                        <span class="chip bg-color">原理</span>
-                    </a>
-                    
-                    <a href="/tags/SpringBoot/" target="_blank">
-                        <span class="chip bg-color">SpringBoot</span>
+                    <a href="/tags/JVM/" target="_blank">
+                        <span class="chip bg-color">JVM</span>
                     </a>
                     
                 </div>
@@ -1285,12 +1279,12 @@ public class Application {
                         <span class="chip bg-color">原理</span>
                     </a>
                     
-                    <a href="/tags/SpringBoot/" target="_blank">
-                        <span class="chip bg-color">SpringBoot</span>
-                    </a>
-                    
                     <a href="/tags/Tomcat/" target="_blank">
                         <span class="chip bg-color">Tomcat</span>
+                    </a>
+                    
+                    <a href="/tags/SpringBoot/" target="_blank">
+                        <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
                 </div>
