@@ -6,16 +6,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="JVM堆，栈，方法区, 思宇">
+    <meta name="keywords" content="Java 触发类加载的六大时机, 思宇">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="一、jvm运行时数据区有哪些我们先来看一张图  
-JVM运行时数据区分类  
-
-JVM栈 (Java Virtual Machine Stacks)  
-堆内存 (Heap Memory)  
-方法区 (Method Area)  
-本地方">
+    <meta name="description" content="类加载时机什么情况需要开始类加载过程的第一阶段：加载？Java虚拟机规范中并没有进行强制约束，这点可以交给虚拟机的具体实现来自由把握。但是对于初始化阶段，虚拟机规范则严格规定了以下几种情况必须立即对类进行初始化，如果类没有进行过初始化，则需">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +17,7 @@ JVM栈 (Java Virtual Machine Stacks)
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JVM堆，栈，方法区 | 思宇</title>
+    <title>Java 触发类加载的六大时机 | 思宇</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -525,13 +519,13 @@ JVM栈 (Java Virtual Machine Stacks)
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        JVM堆，栈，方法区
+                        Java 触发类加载的六大时机
                     </div>
                 </div>
             </div>
@@ -643,8 +637,8 @@ JVM栈 (Java Virtual Machine Stacks)
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JVM/" target="_blank">
-                                <span class="chip bg-color">JVM</span>
+                            <a href="/tags/类加载/" target="_blank">
+                                <span class="chip bg-color">类加载</span>
                             </a>
                         
                     </div>
@@ -655,8 +649,8 @@ JVM栈 (Java Virtual Machine Stacks)
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JVM/" class="post-category" target="_blank">
-                                JVM
+                            <a href="/categories/类加载/" class="post-category" target="_blank">
+                                类加载
                             </a>
                         
                     </div>
@@ -681,14 +675,14 @@ JVM栈 (Java Virtual Machine Stacks)
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        921
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        3 分
                     </div>
                     
                 
@@ -705,48 +699,137 @@ JVM栈 (Java Virtual Machine Stacks)
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1><span id="一-jvm运行时数据区有哪些">一、jvm运行时数据区有哪些</span></h1><p>我们先来看一张图<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/f8IcUgwaWmQhxid.jpg" alt>  </p>
-<p>JVM运行时数据区分类  </p>
-<ol>
-<li>JVM栈 (Java Virtual Machine Stacks)  </li>
-<li>堆内存 (Heap Memory)  </li>
-<li>方法区 (Method Area)  </li>
-<li>本地方法栈 (Native Method Stacks)   </li>
-<li>程序计数器 (Program Counter (PC) Register)  </li>
-</ol>
-<h1><span id="二-方法区">二、方法区</span></h1><h2><span id="jvm栈-java-virtual-machine-stacks">JVM栈 (Java Virtual Machine Stacks)</span></h2><p>在介绍JVM栈之前，我先了解一下 栈帧 概念<br>栈帧：一个栈帧随着一个方法的调用开始而创建，这个方法调用完成而销毁。栈帧内存放者方法中的局部变量，操作数栈等数据。  </p>
-<p>Java栈也称作虚拟机栈（Java Vitual Machine Stack），JVM栈只对栈帧进行存储，压栈和出栈操作。Java栈是Java方法执行的内存模型。下面我们来看一个Java栈图。  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/T2h9PUkul3CpcJF.png" alt>  </p>
-<p>由上图可以看出，Java栈中存放的是一个个的栈帧，每个栈帧对应一个被调用的方法，在栈帧中包括局部变量表(Local Variables)、操作数栈(Operand Stack)、指向当前方法所属的类的运行时常量池（运行时常量池的概念在方法区部分会谈到）的引用(Reference to runtime constant pool)、方法返回地址(Return Address)和一些额外的附加信息。当线程执行一个方法时，就会随之创建一个对应的栈帧，并将建立的栈帧压栈。当方法执行完毕之后，便会将栈帧出栈。因此可知，线程当前执行的方法所对应的栈帧必定位于Java栈的顶部。对于所有的程序设计语言来说，栈这部分空间对程序员来说是不透明的。  </p>
-<p>栈内存的大小可以有两种设置，固定值和根据线程需要动态增长。<br>在JVM栈这个数据区可能会发生抛出两种错误。  </p>
-<ol>
-<li>StackOverflowError 出现在栈内存设置成固定值的时候，当程序执行需要的栈内存超过设定的固定值会抛出这个错误。  </li>
-<li>OutOfMemoryError 出现在栈内存设置成动态增长的时候，当JVM尝试申请的内存大小超过了其可用内存时会抛出这个错误。</li>
-</ol>
-<p><strong>总结</strong>  </p>
-<ol>
-<li>每个线程包含一个栈区,栈中只保存基础数据类型的对象和自定义对象的引用(不是对象)。对象都存放在堆区中  </li>
-<li>每个战中的数据(基础数据类型和对象引用)都是私有的，其他栈不能访问。  </li>
-<li>栈分为3个部分：基本类型变量，执行环境上下文，操作指令区(存放操作指令).  </li>
-<li>在函数中定义的一些基本类型的变量数据和对象的引用变量都在函数的栈内存中分配。  </li>
-<li>当在一段代码块定义一个变量时，Java就在栈中为这个变量分配内存空间，当该变量退出该作用域后，Java会自动释放掉为该变量所分配的内存空间，该内存空间可以立即被另作他用  </li>
-</ol>
-<h2><span id="堆内存-heap-memory">堆内存 (Heap Memory)</span></h2><p>堆数据区是用来存放对象和数组（特殊的对象）。堆内存由多个线程共享。堆内存随着JVM启动而创建。众所周知，Java中有一个很好的特性就是自动垃圾回收。垃圾回收就操作这个数据区来回收对象进而释放内存。如果堆内存剩余的内存不足以满足于对象创建，JVM会抛出OutOfMemoryError错误。  </p>
-<p><strong>总结</strong>  </p>
-<ol>
-<li>存储的全部是对象，每个对象包含一个与之对应的class信息–class的目的是得到操作指令。   </li>
-<li>jvm只有一个堆区（heap）被所有线程共享，堆区中不存放基本类型和对象引用，只存放对象本身  </li>
-<li>堆的优势是可以动态地分配内存大小，生存期也不必事先告诉编译器，因为它是在运行时动态分配内存的，Java的垃圾收集器会自动收走这些不再使用的数据。  </li>
-<li>缺点是，由于要在运行时动态分配内存，存取速度较慢  </li>
-</ol>
-<h2><span id="方法区-method-area">方法区 (Method Area)</span></h2><p>方法区在JVM中也是一个非常重要的区域，它与堆一样，是被线程共享的区域。在方法区中，存储了每个类的信息（包括类的名称、方法信息、字段信息）、静态变量、常量以及编译器编译后的代码等。</p>
-<p>在Class文件中除了类的字段、方法、接口等描述信息外，还有一项信息是常量池，用来存储编译期间生成的字面量和符号引用。  </p>
-<p>在方法区中有一个非常重要的部分就是运行时常量池，它是每一个类或接口的常量池的运行时表示形式，在类和接口被加载到JVM后，对应的运行时常量池就被创建出来。当然并非Class文件常量池中的内容才能进入运行时常量池，在运行期间也可将新的常量放入运行时常量池中，比如String的intern方法。  </p>
-<h2><span id="本地方法栈-native-method-stacks">本地方法栈 (Native Method Stacks)</span></h2><p>一个支持native方法调用的JVM实现，需要有这样一个数据区，就是本地方法栈，Java官方对于本地方法的定义为methods written in a language other than the Java programming language，就是使用非Java语言实现的方法，但是通常我们指的一般为C或者C++，因此这个栈也有着C栈这一称号。一个不支持本地方法执行的JVM没有必要实现这个数据区域。本地方法栈基本和JVM栈一样，其大小也是可以设置为固定值或者动态增加，因此也会对应抛出StackOverflowError和OutOfMemoryError错误。<br>在HotSopt虚拟机中直接就把本地方法栈和Java栈合二为一。  </p>
-<h2><span id="程序计数器-program-counter-pc-register">程序计数器 (Program Counter (PC) Register)</span></h2><p>在通用的计算机体系中，程序计数器用来记录当前正在执行的指令，在JVM中也是如此。程序计数器是线程私有，所以当一个新的线程创建时，程序计数器也会创建。由于Java是支持多线程，Java中的程序计数器用来记录当前线程中正在执行的指令。如果当前正在执行的方法是本地方法，那么此刻程序计数器的值为undefined。注意这个区域是唯一一个不抛出OutOfMemoryError的运行时数据区。  </p>
+                <h1><span id="类加载时机">类加载时机</span></h1><p>什么情况需要开始类加载过程的第一阶段：加载？Java虚拟机规范中并没有进行强制约束，这点可以交给虚拟机的具体实现来自由把握。但是对于初始化阶段，虚拟机规范则严格规定了以下几种情况必须立即对类进行初始化，如果类没有进行过初始化，则需要先触发其初始化。  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/ydCoqXL1ceSTwmt.jpg" alt>  </p>
+<h1><span id="创建类的实例">创建类的实例</span></h1><p>为了验证类加载，我们先配置一个JVM参数  </p>
+<pre class="line-numbers language-jvm"><code class="language-jvm">-XX:+TraceClassLoading 监控类的加载<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在IDE配置如下:  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/g6YThtnFNfwBaAp.jpg" alt>  </p>
+<p>demo代码：  </p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadInstance</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ClassLoadInstance类初始化时就会被执行！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+    <span class="token keyword">public</span> <span class="token function">ClassLoadInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ClassLoadInstance构造函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>    
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadTest</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+        ClassLoadInstance instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassLoadInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/4c3EvzJZ81fdUWj.png" alt>  </p>
+<p>结论：  </p>
+<p>new ClassLoadInstance实例时，发现ClassLoadInstance被加载了，因此 new创建实例对象，会触发类加载进行。  </p>
+<p>访问类的静态变量  </p>
+<p>demo代码：  </p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadStaticVariable</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ClassLoadStaticVariable类初始化时就会被执行！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>    
+    <span class="token keyword">public</span> <span class="token function">ClassLoadStaticVariable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ClassLoadStaticVariable构造函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>    
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadTest</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>ClassLoadStaticVariable<span class="token punctuation">.</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/zpPTitwCWA46QXj.png" alt>  </p>
+<p>结论：  </p>
+<p>访问类ClassLoadStaticVariable的静态变量i时，发现ClassLoadStaticVariable类被加载啦，因此访问类的静态变量会触发类加载。  </p>
+<p>注意：  </p>
+<p>访问final修饰的静态变量时，不会触发类加载，因为在编译期已经将此常量放在常量池了。  </p>
+<h1><span id="访问类的静态方法">访问类的静态方法</span></h1><p>demo代码：  </p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadStaticMethod</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ClassLoadStaticMethod类初始化时就会被执行！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"静态方法被调用"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+    <span class="token keyword">public</span> <span class="token function">ClassLoadStaticMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ClassLoadStaticMethod构造函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>    
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadTest</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+        ClassLoadStaticMethod<span class="token punctuation">.</span><span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/JAT2qP6yvnsrboF.png" alt>  </p>
+<p>结论：  </p>
+<p>访问类ClassLoadStaticMethod的静态方法method时，发现ClassLoadStaticMethod类被加载啦，因此访问类的静态方法会触发类加载。</p>
+<h1><span id="反射">反射</span></h1><p>demo代码：  </p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> classload<span class="token punctuation">;</span>    
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadStaticReflect</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ClassLoadStaticReflect类初始化时就会被执行！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"静态方法被调用"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+    <span class="token keyword">public</span> <span class="token function">ClassLoadStaticReflect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ClassLoadStaticReflect构造函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>    
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadTest</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> ClassNotFoundException <span class="token punctuation">{</span>    
+        Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"classload.ClassLoadStaticReflect"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/C6NKz5ZaHvkiRnd.png" alt>  </p>
+<p>结论：<br>反射得到类ClassLoadStaticReflect时，发现ClassLoadStaticReflect类被加载啦，因此反射会触发类加载。  </p>
+<h1><span id="当初始化一个类时发现其父类还未初始化则先触发父类的初始化">当初始化一个类时，发现其父类还未初始化，则先触发父类的初始化</span></h1><p>demo代码：  </p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//父类    </span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadSuper</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ClassLoadSuper类初始化时就会被执行！这是父类"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> superNum <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>    
+    <span class="token keyword">public</span> <span class="token function">ClassLoadSuper</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"父类ClassLoadSuper构造函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>    
+<span class="token comment" spellcheck="true">//子类    </span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadSub</span> <span class="token keyword">extends</span> <span class="token class-name">ClassLoadSuper</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ClassLoadSub类初始化时就会被执行！这是子类"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> subNum <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>    
+    <span class="token keyword">public</span> <span class="token function">ClassLoadSub</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"子类ClassLoadSub构造函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>    
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadTest</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> ClassNotFoundException <span class="token punctuation">{</span>    
+        ClassLoadSub classLoadSub <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassLoadSub</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/UcVjNCxd7B5WgfX.jpg" alt>  </p>
+<p>看了运行结果，是不是发现，网上那道经典面试题（讲讲类的实例化顺序？）也很清晰啦。先父类静态变量/静态代码块-&gt; 再子类静态变量/静态代码块-&gt;父类构造器-&gt;子类构造器  </p>
+<p>结论：  </p>
+<p>实例化子类ClassLoadSub的时候，发现父类ClassLoadSuper先被加载，因此当初始化一个类时，发现其父类还未初始化，则先触发父类的初始化  </p>
+<h1><span id="虚拟机启动时定义了main方法的那个类先初始化">虚拟机启动时，定义了main()方法的那个类先初始化</span></h1><p>demo代码：  </p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> classload<span class="token punctuation">;</span>    
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoadTest</span> <span class="token punctuation">{</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>  <span class="token punctuation">{</span>    
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>ClassLoadSub<span class="token punctuation">.</span>subNum<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/02/lFB87dUOWQLpTMz.jpg" alt>  </p>
 <hr>
-<p>完结…</p>
-<script>
+<h1><span id="完结">完结…</span></h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -914,7 +997,7 @@ JVM栈 (Java Virtual Machine Stacks)
                     </span>
                     <a href="https://wwsiyu.github.io" class="b-link-green">思宇</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/05/02/jvm-dui-zhan-fang-fa-qu/" class="b-link-green">JVM堆，栈，方法区</a>
+                    <a href="/2020/05/02/java-hong-fa-lei-jia-zai-de-liu-da-shi-ji/" class="b-link-green">Java 触发类加载的六大时机</a>
                 </p>
             </div>
 
@@ -937,7 +1020,7 @@ JVM栈 (Java Virtual Machine Stacks)
         repo: 'wwSiYu.github.io',
         owner: 'wwSiYu',
         admin: ["wwSiYu"],
-        id: '2020/05/02/jvm-dui-zhan-fang-fa-qu/',
+        id: '2020/05/02/java-hong-fa-lei-jia-zai-de-liu-da-shi-ji/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -958,9 +1041,10 @@ JVM栈 (Java Virtual Machine Stacks)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/05/02/java-hong-fa-lei-jia-zai-de-liu-da-shi-ji/">
                     <div class="card-image">
@@ -978,9 +1062,9 @@ JVM栈 (Java Virtual Machine Stacks)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -993,6 +1077,7 @@ JVM栈 (Java Virtual Machine Stacks)
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1011,13 +1096,13 @@ JVM栈 (Java Virtual Machine Stacks)
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/01/springboot-qi-dong-yuan-li-jie-xi/">
+                <a href="/2020/05/02/jvm-dui-zhan-fang-fa-qu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="SpringBoot启动原理">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="JVM堆，栈，方法区">
                         
-                        <span class="card-title">SpringBoot启动原理</span>
+                        <span class="card-title">JVM堆，栈，方法区</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1028,14 +1113,14 @@ JVM栈 (Java Virtual Machine Stacks)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SpringBoot/" class="post-category" target="_blank">
-                                    SpringBoot
+                            <a href="/categories/JVM/" class="post-category" target="_blank">
+                                    JVM
                                 </a>
                             
                             
@@ -1045,12 +1130,8 @@ JVM栈 (Java Virtual Machine Stacks)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/原理/" target="_blank">
-                        <span class="chip bg-color">原理</span>
-                    </a>
-                    
-                    <a href="/tags/SpringBoot/" target="_blank">
-                        <span class="chip bg-color">SpringBoot</span>
+                    <a href="/tags/JVM/" target="_blank">
+                        <span class="chip bg-color">JVM</span>
                     </a>
                     
                 </div>
@@ -1198,13 +1279,6 @@ JVM栈 (Java Virtual Machine Stacks)
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
         <footer class="page-footer bg-color">
     <div class="container row center-align">

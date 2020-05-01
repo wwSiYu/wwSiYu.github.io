@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wwsiyu.github.io/"/>
-  <updated>2020-05-01T16:20:00.194Z</updated>
+  <updated>2020-05-01T16:45:09.521Z</updated>
   <id>https://wwsiyu.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java 触发类加载的六大时机</title>
+    <link href="https://wwsiyu.github.io/2020/05/02/java-hong-fa-lei-jia-zai-de-liu-da-shi-ji/"/>
+    <id>https://wwsiyu.github.io/2020/05/02/java-hong-fa-lei-jia-zai-de-liu-da-shi-ji/</id>
+    <published>2020-05-01T16:28:46.000Z</published>
+    <updated>2020-05-01T16:45:09.521Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="类加载" scheme="https://wwsiyu.github.io/categories/%E7%B1%BB%E5%8A%A0%E8%BD%BD/"/>
+    
+    
+      <category term="类加载" scheme="https://wwsiyu.github.io/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>JVM堆，栈，方法区</title>
