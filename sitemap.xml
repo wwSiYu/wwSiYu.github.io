@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wwsiyu.github.io/2020/05/01/tomcat-zai-springboot-zhong-shi-ru-he-qi-dong-de/</loc>
+    
+    <lastmod>2020-05-01T13:33:19.865Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wwsiyu.github.io/2020/05/01/11/</loc>
     
     <lastmod>2020-05-01T12:51:18.410Z</lastmod>
@@ -44,13 +51,6 @@
   </url>
   
   <url>
-    <loc>https://wwsiyu.github.io/archives/index.html</loc>
-    
-    <lastmod>2019-10-04T03:57:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://wwsiyu.github.io/categories/index.html</loc>
     
     <lastmod>2019-10-04T03:57:55.000Z</lastmod>
@@ -58,7 +58,7 @@
   </url>
   
   <url>
-    <loc>https://wwsiyu.github.io/contact/index.html</loc>
+    <loc>https://wwsiyu.github.io/archives/index.html</loc>
     
     <lastmod>2019-10-04T03:57:55.000Z</lastmod>
     
@@ -73,6 +73,13 @@
   
   <url>
     <loc>https://wwsiyu.github.io/galleries/index.html</loc>
+    
+    <lastmod>2019-10-04T03:57:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wwsiyu.github.io/contact/index.html</loc>
     
     <lastmod>2019-10-04T03:57:55.000Z</lastmod>
     
