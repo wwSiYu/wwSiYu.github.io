@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wwsiyu.github.io/"/>
-  <updated>2020-05-01T10:09:29.052Z</updated>
+  <updated>2020-05-01T12:39:30.227Z</updated>
   <id>https://wwsiyu.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SprngMVC工作原理</title>
+    <link href="https://wwsiyu.github.io/2020/05/01/11/"/>
+    <id>https://wwsiyu.github.io/2020/05/01/11/</id>
+    <published>2020-05-01T11:43:51.000Z</published>
+    <updated>2020-05-01T12:39:30.227Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;font color=&quot;pink&quot;&gt;工作原理图:&lt;/font&gt;&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SpringMVC" scheme="https://wwsiyu.github.io/categories/SpringMVC/"/>
+    
+    
+      <category term="SpringMVC" scheme="https://wwsiyu.github.io/tags/SpringMVC/"/>
+    
+      <category term="工作原理" scheme="https://wwsiyu.github.io/tags/%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SQL语句</title>
     <link href="https://wwsiyu.github.io/2020/04/30/di-er-pian/"/>
     <id>https://wwsiyu.github.io/2020/04/30/di-er-pian/</id>
     <published>2020-04-30T15:53:17.000Z</published>
-    <updated>2020-05-01T10:09:29.052Z</updated>
+    <updated>2020-05-01T12:41:05.697Z</updated>
     
     <summary type="html">
     
@@ -49,7 +77,7 @@
     <link href="https://wwsiyu.github.io/2020/04/30/di-yi-pian-bo-ke/"/>
     <id>https://wwsiyu.github.io/2020/04/30/di-yi-pian-bo-ke/</id>
     <published>2020-04-30T14:35:37.000Z</published>
-    <updated>2020-05-01T10:25:59.895Z</updated>
+    <updated>2020-05-01T12:39:45.329Z</updated>
     
     <summary type="html">
     
