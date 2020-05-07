@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://wwsiyu.github.io/2020/05/01/springboot-qi-dong-yuan-li-jie-xi/</loc>
+    <loc>https://wwsiyu.github.io/2020/05/07/duo-xian-cheng-xiang-jie/</loc>
     
-    <lastmod>2020-05-03T14:31:10.986Z</lastmod>
+    <lastmod>2020-05-07T11:07:21.482Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wwsiyu.github.io/2020/05/01/11/</loc>
+    <loc>https://wwsiyu.github.io/2020/05/01/springboot-qi-dong-yuan-li-jie-xi/</loc>
     
-    <lastmod>2020-05-03T14:30:53.770Z</lastmod>
+    <lastmod>2020-05-07T10:51:51.007Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wwsiyu.github.io/2020/05/01/springmvc-gong-zuo-yuan-li/</loc>
+    
+    <lastmod>2020-05-04T12:22:29.586Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wwsiyu.github.io/2020/04/30/ce-shi/</loc>
+    
+    <lastmod>2020-05-04T12:21:57.305Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wwsiyu.github.io/2020/04/30/sql-yu-ju/</loc>
+    
+    <lastmod>2020-05-04T12:21:39.558Z</lastmod>
     
   </url>
   
@@ -33,20 +54,6 @@
     <loc>https://wwsiyu.github.io/2020/05/01/tomcat-zai-springboot-zhong-shi-ru-he-qi-dong-de/</loc>
     
     <lastmod>2020-05-01T13:54:14.799Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wwsiyu.github.io/2020/04/30/di-er-pian/</loc>
-    
-    <lastmod>2020-05-01T13:43:26.801Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wwsiyu.github.io/2020/04/30/di-yi-pian-bo-ke/</loc>
-    
-    <lastmod>2020-05-01T12:39:45.329Z</lastmod>
     
   </url>
   
@@ -107,14 +114,14 @@
   </url>
   
   <url>
-    <loc>https://wwsiyu.github.io/galleries/%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%873/index.html</loc>
+    <loc>https://wwsiyu.github.io/galleries/%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%874/index.html</loc>
     
     <lastmod>2019-10-04T03:57:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wwsiyu.github.io/galleries/%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%874/index.html</loc>
+    <loc>https://wwsiyu.github.io/galleries/%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%873/index.html</loc>
     
     <lastmod>2019-10-04T03:57:55.000Z</lastmod>
     

@@ -6,15 +6,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="测试, 思宇">
+    <meta name="keywords" content="SQL语句, 思宇">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="
-
-
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { retu">
+    <meta name="description" content="SQL语句大全
+一、基础
+说明：创建数据库CREATE DATABASE database-name
+说明：删除数据库drop database dbname
+说明：备份sql server  
+创建 备份数据的 device USE ma">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>测试 | 思宇</title>
+    <title>SQL语句 | 思宇</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -524,13 +524,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        测试
+                        SQL语句
                     </div>
                 </div>
             </div>
@@ -540,10 +540,99 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- shw2018 洪卫  modify 2019.08.15-->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- shw2018 洪卫  modify 2019.08.15-->
 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -553,8 +642,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/测试/" target="_blank">
-                                <span class="chip bg-color">测试</span>
+                            <a href="/tags/SQL语句/" target="_blank">
+                                <span class="chip bg-color">SQL语句</span>
                             </a>
                         
                     </div>
@@ -565,8 +654,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/DEMO/" class="post-category" target="_blank">
-                                DEMO
+                            <a href="/categories/SQL/" class="post-category" target="_blank">
+                                SQL
                             </a>
                         
                     </div>
@@ -591,14 +680,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        52
+                        3.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        14 分
                     </div>
                     
                 
@@ -615,8 +704,251 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/01/JmhB5PHgnOj1E9G.jpg" alt></p>
+                <h1><span id="sql语句大全">SQL语句大全</span></h1><hr>
+<h2><span id="一-基础">一、基础</span></h2><ol>
+<li>说明：创建数据库<br><font color="gree">CREATE DATABASE database-name</font></li>
+<li>说明：删除数据库<br><font color="gree">drop database dbname</font></li>
+<li>说明：备份sql server  <ul>
+<li>创建 备份数据的 device<br><font color="gree"> USE master<br>EXEC sp_addumpdevice ‘disk’, ‘testBack’, ‘c:\mssql7backup\MyNwind_1.dat’ </font> </li>
+<li>开始备份<br><font color="gree">BACKUP DATABASE pubs TO testBack </font><ol start="4">
+<li>说明：创建新表</li>
+</ol>
+</li>
+<li>根据已有的表创建新表<br><font color="gree">A：create table tab_new like tab_old </font>(使用旧表创建新表)<br><font color="gree">B：create table tab_new as select col1,col2… from tab_old definition only</font></li>
+</ul>
+</li>
+<li>说明：删除新表<br><font color="gree">drop table tabname  </font></li>
+<li>说明：增加一个列<br><font color="gree">Alter table tabname add column col type</font><br><font color="red">注:</font>列增加后将不能删除。DB2中列加上后数据类型也不能改变，唯一能改变的是增加varchar类型的长度  </li>
+<li>说明：添加主键<br><font color="gree">Alter table tabname add primary key(col)</font><br>说明：删除主键<br><font color="gree">Alter table tabname drop primary key(col)</font>  </li>
+<li>说明：创建索引<br><font color="gree">create [unique] index idxname on tabname(col….) </font><br>删除索引<br><font color="gree">drop index idxname</font><br><font color="red">  注: </font>索引是不可更改的，想更改必须删除重新建</li>
+<li>说明：创建视图<br><font color="gree">create view viewname as select statement</font><br>删除视图<br><font color="gree">drop view viewname</font></li>
+<li>说明：几个简单的基本的sql语句<br>选择：<font color="gree">select * from table1 where 范围</font><br>删除：<font color="gree">delete from table1 where 范围</font><br>更新：<font color="gree">update table1 set field1=value1 where 范围</font><br>查找：<font color="gree">select * from table1 where field1 like ’%value1%’</font>—like的语法很精妙，查资料!<br>排序：<font color="gree">select * from table1 order by field1,field2 [desc]</font><br>总数：<font color="gree">select count as totalcount from </font><br>求和：<font color="gree">select sum(field1) as sumvalue from table1</font><br>平均：<font color="gree">select avg(field1) as avgvalue from table1</font><br>最大：<font color="gree">select max(field1) as maxvalue from table1</font><br>最小：<font color="gree">select min(field1) as minvalue from table1</font>  </li>
+<li>说明：几个高级查询运算词<br>A： UNION 运算符<br><font color="green">UNION 运算符通过组合其他两个结果表（例如 TABLE1 和 TABLE2）并消去表中任何重复行而派生出一个结果表。当 ALL 随 UNION 一起使用时（即 UNION ALL），不消除重复行。两种情况下，派生表的每一行不是来自 TABLE1 就是来自 TABLE2。 </font><br>B： EXCEPT 运算符<br><font color="green">EXCEPT运算符通过包括所有在 TABLE1 中但不在 TABLE2 中的行并消除所有重复行而派生出一个结果表。当 ALL 随 EXCEPT 一起使用时 (EXCEPT ALL)，不消除重复行</font><br>C： INTERSECT 运算符<br><font color="green">INTERSECT运算符通过只包括 TABLE1 和 TABLE2 中都有的行并消除所有重复行而派生出一个结果表。当 ALL随 INTERSECT 一起使用时 (INTERSECT ALL)，不消除重复行。<br><font color="red">注: </font>使用运算词的几个查询结果行必须是一致的。</font>  </li>
+<li>说明：使用外连接<br>A: left （outer） join：<br><font color="pink">左外连接（左连接）：结果集几包括连接表的匹配行，也包括左连接表的所有行。<br>SQL: select a.a, a.b, a.c, b.c, b.d, b.f from a LEFT OUT JOIN b ON a.a = b.c</font><br>B：right （outer） join:<br><font color="pink">右外连接(右连接)：结果集既包括连接表的匹配连接行，也包括右连接表的所有行</font><br>C：full/cross （outer） join：<br><font color="pink">全外连接：不仅包括符号连接表的匹配行，还包括两个连接表中的所有记录。</font>  </li>
+<li>分组:Group by:<br><font color="green">  一张表，一旦分组 完成后，查询后只能得到组相关的信息。<br>组相关的信息：（统计信息） count,sum,max,min,avg  分组的标准)<br>在SQLServer中分组时：不能以text,ntext,image类型的字段作为分组依据<br>在selecte统计函数中的字段，不能和普通的字段放在一起；</font>  </li>
+<li>对数据库进行操作:<br><font color="green"> 分离数据库： sp_detach_db;附加数据库：sp_attach_db 后接表明，附加需要完整的路径名</font>  </li>
+<li>如何修改数据库的名称:<br><font color="pink">sp_renamedb ‘old_name’, ‘new_name’</font></li>
+</ol>
 <hr>
+<h2><span id="二-提升">二、提升</span></h2><ol>
+<li><p>说明：复制表(只复制结构,源表名：a 新表名：b) (Access可用)<br>法一：<font color="gree">select * into b from a where 1&lt;&gt;1（仅用于SQlServer）  </font><br>法二：<font color="gree">select top 0 * into b from a</font>  </p>
+</li>
+<li><p>说明：拷贝表(拷贝数据,源表名：a 目标表名：b) (Access可用)<br><font color="gree">insert into b(a, b, c) select d,e,f from b;</font>  </p>
+</li>
+<li><p>说明：跨数据库之间表的拷贝(具体数据使用绝对路径) (Access可用)<br><font color="gree">insert into b(a, b, c) select d,e,f from b in ‘具体数据库’ where 条件</font><br><font color="pink">例子：..from b in ‘“&amp;Server.MapPath(“.”)&amp;”\data.mdb” &amp;”‘ where.</font>  </p>
+</li>
+<li><p>说明：子查询(表名1：a 表名2：b)<br><font color="gree">select a,b,c from a where a IN (select d from b )</font><br>或者:<font color="gree"> select a,b,c from a where a IN (1,2,3) </font>  </p>
+</li>
+<li><p>说明：显示文章、提交人和最后回复时间<br><font color="gree">select a.title,a.username,b.adddate from table a,(select max(adddate) adddate from table where table.title=a.title) b</font>  </p>
+</li>
+<li><p>说明：外连接查询(表名1：a 表名2：b)<br><font color="gree">select a.a, a.b, a.c, b.c, b.d, b.f from a LEFT OUT JOIN b ON a.a = b.c</font>  </p>
+</li>
+<li><p>说明：在线视图查询(表名1：a )<br><font color="gree">select * from (SELECT a,b,c FROM a) T where t.a &gt; 1;</font>  </p>
+</li>
+<li><p>说明：between的用法,between限制查询数据范围时包括了边界值,not between不包括<br><font color="gree">select * from table1 where time between time1 and time2</font><br><font color="gree">select a,b,c, from table1 where a not between 数值1 and 数值2</font>  </p>
+</li>
+<li><p>说明：in 的使用方法<br><font color="gree">select * from table1 where a [not] in (‘值1’,’值2’,’值4’,’值6’)</font>  </p>
+</li>
+<li><p>说明：两张关联表，删除主表中已经在副表中没有的信息<br><font color="gree">delete from table1 where not exists ( select * from table2 where table1.field1=table2.field1 )</font>  </p>
+</li>
+<li><p>说明：四表联查问题：<br><font color="gree">select * from a left inner join b on a.a=b.b right inner join c on a.a=c.c inner join d on a.a=d.d where …..</font>  </p>
+</li>
+<li><p>说明：日程安排提前五分钟提醒<br>SQL: <font color="gree">select * from 日程安排 where datediff(‘minute’,f开始时间,getdate())&gt;5</font>  </p>
+</li>
+<li><p>说明：一条sql 语句搞定数据库分页select top 10 b.* from (select top 20 主键字段,排序字段 from 表名 order by 排序字段 desc) a,表名 b where b.主键字段 = a.主键字段 order by a.排序字段具体实现：关于数据库分页:  </p>
+<pre><code>    declare @start int,@end int
+
+    @sql  nvarchar(600)
+
+    set @sql=’select top’+str(@end-@start+1)+’+from T where rid not in(select top’+str(@str-1)+’Rid from T where Rid&gt;-1)’
+
+    exec sp_executesql @sql  
+  注意：在top后不能直接跟一个变量，所以在实际应用中只有这样的进行特殊的处理。Rid为一个标识列，如果top后还有具体的字段，这样做是非常有好处的。因为这样可以避免 top的字段如果是逻辑索引的，查询的结果后实际表中的不一致（逻辑索引中的数据有可能和数据表中的不一致，而查询时如果处在索引则首先查询索引）  </code></pre></li>
+<li><p>说明：前10条记录<br><font color="gree">select top 10 * form table1 where 范围 </font>  </p>
+</li>
+<li><p>说明：选择在每一组b值相同的数据中对应的a最大的记录的所有信息(类似这样的用法可以用于论坛每月排行榜,每月热销产品分析,按科目成绩排名,等等.)<br><font color="gree">select a,b,c from tablename ta where a=(select max(a) from tablename tb where tb.b=ta.b)</font>  </p>
+</li>
+<li><p>说明：包括所有在 TableA中但不在 TableB和TableC中的行并消除所有重复行而派生出一个结果表<br><font color="gree">(select a from tableA ) except (select a from tableB) except (select a from tableC)</font>  </p>
+</li>
+<li><p>说明：随机取出10条数据<br><font color="gree">select top 10 * from tablename order by newid()</font>  </p>
+</li>
+<li><p>说明：随机选择记录<br><font color="gree">select newid()</font>  </p>
+</li>
+<li><p>说明：删除重复记录<br>1),<font color="gree">delete from tablename where id not in (select max(id) from tablename group by col1,col2,…)</font><br>2),<font color="gree">select distinct * into temp from tablename<br>delete from tablename<br>insert into tablename select * from temp</font><br><font color="pink">评价： 这种操作牵连大量的数据的移动，这种做法不适合大容量但数据操作3),例如：在一个外部表中导入数据，由于某些原因第一次只导入了一部分，但很难判断具体位置，这样只有在下一次全部导入，这样也就产生好多重复的字段，怎样删除重复字段</font><br><font color="gree">alter table tablename</font><br>–添加一个自增列<br><font color="pink">add  column_b int identity(1,1)<br>delete from tablename where column_b not in(<br>select max(column_b)  from tablename group by column1,column2,…)<br>alter table tablename drop column column_b</font>  </p>
+</li>
+<li><p>说明：列出数据库里所有的表名<br><font color="gree">select name from sysobjects where type=’U’</font> // U代表用户  </p>
+</li>
+<li><p>说明：列出表里的所有的列名<br><font color="gree">select name from syscolumns where id=object_id(‘TableName’)</font>   </p>
+</li>
+<li><p>说明：列示type、vender、pcs字段，以type字段排列，case可以方便地实现多重选择，类似select 中的case。<br><font color="gree">select type,sum(case vender when ‘A’ then pcs else 0 end),sum(case vender when ‘C’ then pcs else 0 end),sum(case vender when ‘B’ then pcs else 0 end) FROM tablename group by type</font><br>显示结果：<br><font color="red">type vender pcs<br>电脑 A 1<br>电脑 A 1<br>光盘 B 2<br>光盘 A 2<br>手机 B 3<br>手机 C 3</font>   </p>
+</li>
+<li><p>说明：初始化表table1<br><font color="gree">TRUNCATE TABLE table1</font>  </p>
+</li>
+<li><p>说明：选择从10到15的记录<br><font color="gree">select top 5 * from (select top 15 * from table order by id asc) table_别名 order by id desc</font>  </p>
+</li>
+</ol>
+<hr>
+<h2><span id="三-技巧">三、技巧</span></h2><ol>
+<li><p>1=1，1=2的使用，在SQL语句组合时用的较多  </p>
+<p>   “where 1=1” 是表示选择全部    “where 1=2”全部不选，<br>   如：<br>   <font color="pink">if @strWhere !=’’<br>   begin<br>   set @strSQL = ‘select count(<em>) as Total from [‘ + @tblName + ‘] where ‘ + @strWhere<br>   end<br>   else<br>   begin<br>   set @strSQL = ‘select count(</em>) as Total from [‘ + @tblName + ‘]’<br>   end</font>  </p>
+<p>   我们可以直接写成</p>
+<p>   错误！未找到目录项。<br>   <font color="pink">set @strSQL = ‘select count(*) as Total from [‘ + @tblName + ‘] where 1=1 安定 ‘+ @strWhere</font>  </p>
+</li>
+<li><p>收缩数据库  </p>
+</li>
+</ol>
+<p>–重建索引<br><font color="gree">DBCC REINDEX<br>DBCC INDEXDEFRAG</font><br>–收缩数据和日志<br><font color="gree">DBCC SHRINKDB<br>DBCC SHRINKFILE</font><br>3.  压缩数据库<br><font color="gree">dbcc shrinkdatabase(dbname) </font><br>4. 转移数据库给新用户以已存在用户权限<br><font color="gree">exec sp_change_users_login ‘update_one’,’newname’,’oldname’ go</font><br>5. 检查备份集<br><font color="gree">RESTORE VERIFYONLY from disk=’E:\dvbbs.bak’</font><br>6. 修复数据库<br><font color="pink">ALTER DATABASE [dvbbs] SET SINGLE_USER<br>GO<br>DBCC CHECKDB(‘dvbbs’,repair_allow_data_loss) WITH TABLOCK<br>GO<br>ALTER DATABASE [dvbbs] SET MULTI_USER<br>GO</font><br>7. 日志清除<br><font color="pink">SET NOCOUNT ON<br>DECLARE @LogicalFileName sysname,<br> @MaxMinutes INT,<br> @NewSize INT </font>  </p>
+<pre><code>    USE tablename -- 要操作的数据库名  
+    SELECT  @LogicalFileName = 'tablename_log', -- 日志文件名  
+    @MaxMinutes = 10, -- Limit on time allowed to wrap log.  
+    @NewSize = 1  -- 你想设定的日志文件的大小(M)  
+
+    Setup / initialize  
+    DECLARE @OriginalSize int  
+    SELECT @OriginalSize = size   
+    FROM sysfiles    
+    WHERE name = @LogicalFileName    
+    SELECT 'Original Size of ' + db_name() + ' LOG is ' +   
+    CONVERT(VARCHAR(30),@OriginalSize) + ' 8K pages or ' +   
+    CONVERT(VARCHAR(30),(@OriginalSize*8/1024)) + 'MB'  
+    FROM sysfiles  
+    WHERE name = @LogicalFileName  
+    CREATE TABLE DummyTrans  
+    (DummyColumn char (8000) not null)  
+
+
+    DECLARE @Counter    INT,  
+    @StartTime DATETIME,    
+    @TruncLog   VARCHAR(255)    
+    SELECT @StartTime = GETDATE(),  
+    @TruncLog = 'BACKUP LOG ' + db_name() + ' WITH TRUNCATE_ONLY'  
+
+    DBCC SHRINKFILE (@LogicalFileName, @NewSize)  
+    EXEC (@TruncLog)  
+    -- Wrap the log if necessary.  
+    WHILE @MaxMinutes &gt; DATEDIFF (mi, @StartTime, GETDATE()) -- time has not expired  
+    AND @OriginalSize = (SELECT size FROM sysfiles WHERE name = @LogicalFileName)    
+    AND (@OriginalSize * 8 /1024) &gt; @NewSize    
+    BEGIN -- Outer loop.  
+    SELECT @Counter = 0  
+    WHILE   ((@Counter &lt; @OriginalSize / 16) AND (@Counter &lt; 50000))  
+    BEGIN -- update  
+    INSERT DummyTrans VALUES ('Fill Log') DELETE DummyTrans  
+    SELECT @Counter = @Counter + 1  
+    END  
+    EXEC (@TruncLog)    
+    END  
+    SELECT 'Final Size of ' + db_name() + ' LOG is ' +  
+    CONVERT(VARCHAR(30),size) + ' 8K pages or ' +   
+    CONVERT(VARCHAR(30),(size*8/1024)) + 'MB'  
+    FROM sysfiles   
+    WHERE name = @LogicalFileName  
+    DROP TABLE DummyTrans  
+    SET NOCOUNT OFF  </code></pre><ol start="8">
+<li><p>说明：更改某个表<br><font color="pink">exec sp_changeobjectowner ‘tablename’,’dbo’</font>  </p>
+</li>
+<li><p>存储更改全部表  </p>
+<pre><code>     CREATE PROCEDURE dbo.User_ChangeObjectOwnerBatch  
+     @OldOwner as NVARCHAR(128),  
+     @NewOwner as NVARCHAR(128)  
+     AS  
+
+ DECLARE @Name    as NVARCHAR(128)  
+ DECLARE @Owner   as NVARCHAR(128)  
+ DECLARE @OwnerName   as NVARCHAR(128)  
+
+ DECLARE curObject CURSOR FOR   
+ select 'Name'    = name,  
+ 'Owner'    = user_name(uid)  
+ from sysobjects  
+ where user_name(uid)=@OldOwner  
+ order by name  
+
+ OPEN   curObject  
+ FETCH NEXT FROM curObject INTO @Name, @Owner  
+ WHILE(@@FETCH_STATUS=0)  
+ BEGIN       
+ if @Owner=@OldOwner   
+ begin  
+ set @OwnerName = @OldOwner + '.' + rtrim(@Name)  
+ exec sp_changeobjectowner @OwnerName, @NewOwner  
+ end  
+ -- select @name,@NewOwner,@OldOwner  
+
+ FETCH NEXT FROM curObject INTO @Name, @Owner  
+ END  
+
+ close curObject  
+ deallocate curObject  
+ GO  </code></pre></li>
+<li><p>SQL SERVER中直接循环写入数据  </p>
+<pre><code>declare @i int  
+set @i=1  
+while @i&lt;30  
+begin  
+insert into test (userid) values(@i)  
+set @i=@i+1  
+end  
+案例：  
+有如下表，要求就裱中所有沒有及格的成績，在每次增長0.1的基礎上，使他們剛好及格:  
+
+Name     score  
+
+Zhangshan   80  
+
+Lishi       59  
+
+Wangwu      50  
+
+Songquan    69  
+
+while((select min(score) from tb_table)&lt;60)  
+
+begin  
+
+update tb_table set score =score*1.01  
+
+where score&lt;60  
+
+if  (select min(score) from tb_table)&gt;60  
+
+break  
+
+else  
+
+continue  
+
+end  </code></pre></li>
+</ol>
+<hr>
+<h2><span id="数据开发-经典">数据开发-经典</span></h2><ol>
+<li><p>按姓氏笔画排序:<br>Select * From TableName Order By CustomerName Collate Chinese_PRC_Stroke_ci_as //从少到多  </p>
+</li>
+<li><p>数据库加密:<br>select encrypt(‘原始密码’)<br>select pwdencrypt(‘原始密码’)<br>select pwdcompare(‘原始密码’,’加密后密码’) = 1–相同；否则不相同 encrypt(‘原始密码’)<br>select pwdencrypt(‘原始密码’)<br>select pwdcompare(‘原始密码’,’加密后密码’) = 1–相同；否则不相同  </p>
+</li>
+<li><p>取回表中字段:<br>declare @list varchar(1000),<br>@sql nvarchar(1000)<br>select @list=@list+’,’+b.name from sysobjects a,syscolumns b where a.id=b.id and<br>a.name=’表A’<br>set @sql=’select ‘+right(@list,len(@list)-1)+’ from 表A’<br>exec (@sql)  </p>
+</li>
+<li><p>查看硬盘分区:<br>EXEC master..xp_fixeddrives    </p>
+</li>
+<li><p>杀掉所有的事件探察器进程:<br>DECLARE hcforeach CURSOR GLOBAL FOR SELECT ‘kill ‘+RTRIM(spid) FROM   master.dbo.sysprocesses<br>WHERE program_name IN(‘SQL profiler’,N’SQL 事件探查器’)<br>EXEC sp_msforeach_worker ‘?’  </p>
+</li>
+<li><p>获取当前数据库中的所有用户表<br>select Name from sysobjects where xtype=’u’ and status&gt;=0  </p>
+</li>
+<li><p>获取某一个表的所有字段<br> select name from syscolumns where id=object_id(‘表名’)  </p>
+<p> select name from syscolumns where id in (select id from sysobjects where type = ‘u’ and name = ‘表名’)  </p>
+<p> 两种方式的效果相同  </p>
+</li>
+<li><p>查看与某一个表相关的视图、存储过程、函数select a.* from sysobjects a, syscomments b where a.id = b.id and b.text like ‘%表名%’  </p>
+</li>
+<li><p>查看当前数据库中所有存储过程<br>select name as 存储过程名称 from sysobjects where xtype=’P’  </p>
+</li>
+<li><p>查询用户创建的所有数据库select * from master..sysdatabases D where sid not in(select sid from master..syslogins where name=’sa’)<br>或者<br>select dbid, name AS DB_NAME from master..sysdatabases where sid &lt;&gt; 0x01  </p>
+</li>
+<li><p>询某一个表的字段和数据类型<br>select column_name,data_type from information_schema.columns<br>where table_name = ‘表名’   </p>
+</li>
+</ol>
+<hr>
+<h2><span id="完结">完结…</span></h2><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/01/mugFGOJjI1Mq8yT.jpg" alt="biu"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -785,7 +1117,7 @@
                     </span>
                     <a href="https://wwsiyu.github.io" class="b-link-green">思宇</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/04/30/di-yi-pian-bo-ke/" class="b-link-green">测试</a>
+                    <a href="/2020/04/30/sql-yu-ju/" class="b-link-green">SQL语句</a>
                 </p>
             </div>
 
@@ -808,7 +1140,7 @@
         repo: 'wwSiYu.github.io',
         owner: 'wwSiYu',
         admin: ["wwSiYu"],
-        id: '2020/04/30/di-yi-pian-bo-ke/',
+        id: '2020/04/30/sql-yu-ju/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -833,13 +1165,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/30/di-er-pian/">
+                <a href="/2020/05/01/springmvc-gong-zuo-yuan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="SQL语句">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="SprngMVC工作原理">
                         
-                        <span class="card-title">SQL语句</span>
+                        <span class="card-title">SprngMVC工作原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -850,14 +1182,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-30
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-01
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SQL/" class="post-category" target="_blank">
-                                    SQL
+                            <a href="/categories/SpringMVC/" class="post-category" target="_blank">
+                                    SpringMVC
                                 </a>
                             
                             
@@ -867,8 +1199,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SQL语句/" target="_blank">
-                        <span class="chip bg-color">SQL语句</span>
+                    <a href="/tags/原理/" target="_blank">
+                        <span class="chip bg-color">原理</span>
+                    </a>
+                    
+                    <a href="/tags/SpringMVC/" target="_blank">
+                        <span class="chip bg-color">SpringMVC</span>
                     </a>
                     
                 </div>
@@ -879,10 +1215,10 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/30/di-yi-pian-bo-ke/">
+                <a href="/2020/04/30/ce-shi/">
                     <div class="card-image">
                         
                         
@@ -913,7 +1249,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -969,6 +1304,99 @@
 </script>
 
 
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
     
 
 </main>
@@ -1217,5 +1645,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
