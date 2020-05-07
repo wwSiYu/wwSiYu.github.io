@@ -973,53 +973,51 @@
 
      <span class="token keyword">class</span> <span class="token class-name">NumberThread</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+         <span class="token annotation punctuation">@Override</span>
+         <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                 <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span><span class="token number">0</span> <span class="token punctuation">)</span>
+                 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token punctuation">}</span>
+         <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span>
+
+     <span class="token keyword">class</span> <span class="token class-name">NumberThread1</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
+         <span class="token annotation punctuation">@Override</span>
+         <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                 <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">":"</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                 <span class="token punctuation">}</span>
+             <span class="token punctuation">}</span>
+         <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span>
+
+     <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadPool</span> <span class="token punctuation">{</span>
+
+         <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+             <span class="token comment" spellcheck="true">//创建固定线程个数为十个的线程池</span>
+             ExecutorService executorService <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+             <span class="token comment" spellcheck="true">//new一个Runnable接口的对象</span>
+             NumberThread number <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">NumberThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             NumberThread1 number1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">NumberThread1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+             <span class="token comment" spellcheck="true">//执行线程,最多十个</span>
+             executorService<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>number1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+             executorService<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//适合适用于Runnable</span>
+
+             <span class="token comment" spellcheck="true">//executorService.submit();//适合使用于Callable</span>
+             <span class="token comment" spellcheck="true">//关闭线程池</span>
+             executorService<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+
+     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> <font color="yellow">目前两种方式要想调用新线程，都需要用到Thread中的start方法。</font>  </p>
 </li>
 </ol>
-<pre><code>        @Override
-        public void run() {
-            for(int i = 0;i&lt;=100;i++){
-                if (i % 2 ==0 )
-                System.out.println(Thread.currentThread().getName()+":"+i);
-            }
-        }
-    }
-
-    class NumberThread1 implements Runnable{
-        @Override
-        public void run() {
-            for(int i = 0;i&lt;100; i++){
-                if(i%2==1){
-                    System.out.println(Thread.currentThread().getName()+":"+i);
-                }
-            }
-        }
-    }
-
-    public class ThreadPool {
-
-        public static void main(String[] args){
-
-            //创建固定线程个数为十个的线程池
-            ExecutorService executorService = Executors.newFixedThreadPool(10);
-
-            //new一个Runnable接口的对象
-            NumberThread number = new NumberThread();
-            NumberThread1 number1 = new NumberThread1();
-
-            //执行线程,最多十个
-            executorService.execute(number1);
-            executorService.execute(number);//适合适用于Runnable
-
-            //executorService.submit();//适合使用于Callable
-            //关闭线程池
-            executorService.shutdown();
-        }
-
-    }
-  ```  
-
-&lt;font color=yellow&gt;目前两种方式要想调用新线程，都需要用到Thread中的start方法。&lt;/font&gt;  </code></pre><h1><span id="java-virtual-machinejvmjava虚拟机内存结构">java virtual machine（JVM）：java虚拟机内存结构</span></h1><p>程序（一段静态的代码）——————》加载到内存中——————》进程（加载到内存中的代码，动态的程序）<br>进程可细分为多个线程，一个线程代表一个程序内部的一条执行路径<br>每个线程有其独立的程序计数器（PC，指导着程序向下执行）与运行栈（本地变量等，本地方法等）  </p>
+<h1><span id="java-virtual-machinejvmjava虚拟机内存结构">java virtual machine（JVM）：java虚拟机内存结构</span></h1><p>程序（一段静态的代码）——————》加载到内存中——————》进程（加载到内存中的代码，动态的程序）<br>进程可细分为多个线程，一个线程代表一个程序内部的一条执行路径<br>每个线程有其独立的程序计数器（PC，指导着程序向下执行）与运行栈（本地变量等，本地方法等）  </p>
 <p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.loli.net/2020/05/07/8bzaArXjYCPhs2M.png" alt>  </p>
 <h1><span id="线程通信方法">线程通信方法：</span></h1><p><strong>wait（）/ notify()/ notifayAll():此三个方法定义在Object类中的，因为这三个方法需要用到锁，而锁是任意对象都能充当的，所以这三个方法定义在Object类中。</strong>  </p>
 <p><font color="pink">由于wait，notify，以及notifyAll都涉及到与锁相关的操作</font>  </p>
