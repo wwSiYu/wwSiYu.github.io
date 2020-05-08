@@ -127,7 +127,7 @@
     <link href="https://wwsiyu.github.io/2020/05/02/jvm-dui-zhan-fang-fa-qu/"/>
     <id>https://wwsiyu.github.io/2020/05/02/jvm-dui-zhan-fang-fa-qu/</id>
     <published>2020-05-01T16:03:57.000Z</published>
-    <updated>2020-05-01T16:20:00.194Z</updated>
+    <updated>2020-05-08T07:18:03.601Z</updated>
     
     <summary type="html">
     
@@ -171,9 +171,9 @@
       <category term="SpringBoot" scheme="https://wwsiyu.github.io/categories/SpringBoot/"/>
     
     
-      <category term="SpringBoot" scheme="https://wwsiyu.github.io/tags/SpringBoot/"/>
-    
       <category term="原理" scheme="https://wwsiyu.github.io/tags/%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="SpringBoot" scheme="https://wwsiyu.github.io/tags/SpringBoot/"/>
     
   </entry>
   
@@ -201,11 +201,11 @@
       <category term="Tomcat" scheme="https://wwsiyu.github.io/categories/SpringBoot/Tomcat/"/>
     
     
-      <category term="Tomcat" scheme="https://wwsiyu.github.io/tags/Tomcat/"/>
+      <category term="原理" scheme="https://wwsiyu.github.io/tags/%E5%8E%9F%E7%90%86/"/>
     
       <category term="SpringBoot" scheme="https://wwsiyu.github.io/tags/SpringBoot/"/>
     
-      <category term="原理" scheme="https://wwsiyu.github.io/tags/%E5%8E%9F%E7%90%86/"/>
+      <category term="Tomcat" scheme="https://wwsiyu.github.io/tags/Tomcat/"/>
     
   </entry>
   
