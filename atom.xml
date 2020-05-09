@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wwsiyu.github.io/"/>
-  <updated>2020-05-07T13:06:41.252Z</updated>
+  <updated>2020-05-09T11:23:47.451Z</updated>
   <id>https://wwsiyu.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>继承 - 编译看左边，运行看右边</title>
+    <link href="https://wwsiyu.github.io/2020/05/09/ji-cheng-bian-yi-kan-zuo-bian-yun-xing-kan-you-bian/"/>
+    <id>https://wwsiyu.github.io/2020/05/09/ji-cheng-bian-yi-kan-zuo-bian-yun-xing-kan-you-bian/</id>
+    <published>2020-05-09T11:17:31.000Z</published>
+    <updated>2020-05-09T11:23:47.451Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;java中的继承是面向对象程序设计的一大特征，子类继承了父类的所有方法和成员变量，如果不对方法进行重写或对成员变量进行重新赋值，那么子类可以直接调用父类中的方法或变量。同时，在实例化父类的时候，可以使用子类的构造器。&lt;/strong&gt; 
+        
+      
+    
+    </summary>
+    
+      <category term="继承" scheme="https://wwsiyu.github.io/categories/%E7%BB%A7%E6%89%BF/"/>
+    
+    
+      <category term="继承" scheme="https://wwsiyu.github.io/tags/%E7%BB%A7%E6%89%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>equals()和HashCode()深入理解以及Hash算法原理</title>
@@ -231,9 +257,9 @@
       <category term="SpringMVC" scheme="https://wwsiyu.github.io/categories/SpringMVC/"/>
     
     
-      <category term="SpringMVC" scheme="https://wwsiyu.github.io/tags/SpringMVC/"/>
-    
       <category term="原理" scheme="https://wwsiyu.github.io/tags/%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="SpringMVC" scheme="https://wwsiyu.github.io/tags/SpringMVC/"/>
     
   </entry>
   
