@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wwsiyu.github.io/"/>
-  <updated>2020-05-09T11:31:02.916Z</updated>
+  <updated>2020-05-12T05:31:36.840Z</updated>
   <id>https://wwsiyu.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>枚举</title>
+    <link href="https://wwsiyu.github.io/2020/05/12/mei-ju/"/>
+    <id>https://wwsiyu.github.io/2020/05/12/mei-ju/</id>
+    <published>2020-05-12T04:52:45.000Z</published>
+    <updated>2020-05-12T05:31:36.840Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;&lt;span id=&quot;介绍枚举&quot;&gt;介绍枚举&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;本文将按以下小节点来，一一介绍枚举：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;枚举的实现  &lt;/li&gt;
+&lt;li&gt;枚举的用法  &lt;/li&gt;
+&lt;li&gt;枚举的原理  &lt;/li&gt;
+&lt;li&gt;枚举与单例 
+        
+      
+    
+    </summary>
+    
+      <category term="枚举" scheme="https://wwsiyu.github.io/categories/%E6%9E%9A%E4%B8%BE/"/>
+    
+    
+      <category term="枚举" scheme="https://wwsiyu.github.io/tags/%E6%9E%9A%E4%B8%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>继承</title>
